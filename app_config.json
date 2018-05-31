@@ -1,0 +1,5 @@
+{
+  "AWS_REGION": "us-west-2",
+  "STARTUP_SIGNUP_TABLE": "records",
+  "NEW_SIGNUP_TOPIC": ""
+}
