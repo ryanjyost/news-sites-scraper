@@ -129,7 +129,7 @@ const createBatch = async () => {
   console.log(`Starting Batch ${batchTime}... `);
 
   //.....launch headless chrome instance
-  [err, browser] = await to(puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']}););
+  [err, browser] = await to(puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']}));
   if (err) console.error("Error", err);
 
   //.....create a new browser page
