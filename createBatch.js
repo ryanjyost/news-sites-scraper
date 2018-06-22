@@ -1,8 +1,6 @@
 const cloudinary = require("cloudinary");
 const puppeteer = require("puppeteer");
 const intoStream = require("into-stream");
-const util = require("util");
-const _ = require("lodash");
 
 const Record = require("./models/record.js");
 const Batch = require("./models/batch.js");

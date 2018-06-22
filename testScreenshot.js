@@ -1,7 +1,6 @@
 const puppeteer = require("puppeteer");
 const sites = require("./sites");
 const to = require("./lib/to.js");
-const Timeout = require("await-timeout");
 
 (async () => {
   try {
