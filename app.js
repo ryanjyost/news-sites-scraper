@@ -8,10 +8,6 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cron = require("node-cron");
-const getPort = require("get-port");
-
-const index = require("./routes/index");
-const users = require("./routes/users");
 
 const app = express();
 
@@ -20,20 +16,21 @@ const app = express();
 const createBatch = require("./createBatch");
 
 // const task = cron.schedule(
-//   "* * * * *",
+//   // "0 17 ? * 0,4-6",
+//   "42 * * * * *",
 //   function() {
-//     saveScreenshots(sites);
+// 		createBatch();
 //   },
-//   false
+//   true
 // );
 
-// task.start();
+// schedule tasks to be run on the server
+cron.schedule("*/20 * * * *", function() {
+	createBatch()
+});
 
-try {
-  createBatch();
-} catch (e) {
-  console.log("eRROR");
-}
+
+
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
