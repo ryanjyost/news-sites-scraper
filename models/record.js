@@ -4,7 +4,8 @@ const recordSchema = new mongoose.Schema({
   batch: Number,
   site: {
     name: String,
-    url: String
+    url: String,
+     title: String,
   },
   content: {
     links: Array

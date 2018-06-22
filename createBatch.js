@@ -12,6 +12,7 @@ const prepPageForScreenshot = require("./lib/prepPageForScreenshot.js");
 const scrape = require("./lib/scrape.js");
 const sites = require("./sites");
 
+
 cloudinary.config({
   cloud_name: "ryanjyost",
   api_key: "737735696923524",
@@ -113,7 +114,7 @@ const createRecord = async function(page, site, batchTime, mongodbCallback) {
   if (err) console.error("Error", err);
 
   if (record) {
-    console.log(`+ ${record.site.name} saved to mongodb`);
+    console.log(`+ ${record.site.title} saved to mongodb`);
     mongodbCallback(record.id);
   }
 };
