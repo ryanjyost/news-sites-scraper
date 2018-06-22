@@ -25,7 +25,7 @@ const createBatch = require("./createBatch");
 // );
 
 // schedule tasks to be run on the server
-cron.schedule("*/20 * * * *", function() {
+cron.schedule("* */1 * * *", function() {
 	createBatch()
 });
 
