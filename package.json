@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pm2 start ecosystem.config.js",
     "preinstall": "npm install pm2 -g",
-    "start": "node app.js"
+    "start": "pm2-runtime app.js -i max"
   },
   "dependencies": {
     "body-parser": "~1.15.2",

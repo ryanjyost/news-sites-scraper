@@ -18,10 +18,12 @@ const createBatch = require("./createBatch");
 createBatch();
 
 // schedule tasks to be run on the server
-cron.schedule("*/5 * * * *", function() {
-	// createBatch()
-  console.log('test')
-});
+// cron.schedule("*/5 * * * *", function() {
+// createBatch();
+//   console.log('test')
+// });
+
+
 
 memwatch.on('leak', function(info) {
   console.log('LEAK', info)
