@@ -1,6 +1,7 @@
 const cloudinary = require("cloudinary");
 const puppeteer = require("puppeteer");
 const intoStream = require("into-stream");
+const util = require('util');
 
 const Record = require("./models/record.js");
 const Batch = require("./models/batch.js");
@@ -9,7 +10,8 @@ const to = require("./lib/to.js");
 const prepPageForScreenshot = require("./lib/prepPageForScreenshot.js");
 const scrape = require("./lib/scrape.js");
 const sites = require("./sites");
-
+const logMemoryUsage = require("./lib/logMemoryUsage.js");
+const bytes = require('bytes');
 
 cloudinary.config({
   cloud_name: "ryanjyost",
@@ -152,6 +154,9 @@ const createBatch = async () => {
   for (let site of sites) {
     //.....create a single record
     await to(createRecord(page, site, batchTime, addRecordInfoToBatch));
+		logMemoryUsage()
+
+		//console.log('Memory Usage', 'RSS:', usage);
     if (err) console.error("Error", err);
   }
 

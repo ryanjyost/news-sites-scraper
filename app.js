@@ -8,6 +8,7 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cron = require("node-cron");
+var memwatch = require('memwatch-next');
 
 const app = express();
 
@@ -15,19 +16,20 @@ const app = express();
 // Create a new batch of records
 const createBatch = require("./createBatch");
 
-// const task = cron.schedule(
-//   // "0 17 ? * 0,4-6",
-//   "42 * * * * *",
-//   function() {
-// 		createBatch();
-//   },
-//   true
-// );
-
 // schedule tasks to be run on the server
 cron.schedule("* */1 * * *", function() {
 	createBatch()
 });
+
+memwatch.on('leak', function(info) {
+  console.log('LEAK', info)
+});
+
+memwatch.on('stats', function(stats) {
+	console.log('GC', stats)
+});
+
+
 
 
 
