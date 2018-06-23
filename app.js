@@ -15,20 +15,21 @@ const app = express();
 //======================================
 // Create a new batch of records
 const createBatch = require("./createBatch");
-createBatch()
+createBatch();
 
 // schedule tasks to be run on the server
-// cron.schedule("* */1 * * *", function() {
-// 	createBatch()
-// });
+cron.schedule("*/5 * * * *", function() {
+	// createBatch()
+  console.log('test')
+});
 
 memwatch.on('leak', function(info) {
   console.log('LEAK', info)
 });
 
-memwatch.on('stats', function(stats) {
-	console.log('GC', stats)
-});
+// memwatch.on('stats', function(stats) {
+// 	console.log('GC', stats)
+// });
 
 
 
