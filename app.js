@@ -33,11 +33,6 @@ memwatch.on('leak', function(info) {
 // 	console.log('GC', stats)
 // });
 
-
-
-
-
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -77,7 +72,7 @@ app.use(function(err, req, res, next) {
 
 //=================================
 //Listen on port
-app.listen(app.get("port"), error => {
+app.listen((process.env.PORT || 5000), error => {
   if (error) console.error(error);
   // console.log("app is running");
 });
