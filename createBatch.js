@@ -2,6 +2,7 @@ const cloudinary = require("cloudinary");
 const puppeteer = require("puppeteer");
 const intoStream = require("into-stream");
 const util = require('util');
+const stopWords = require('./lib/stopWords');
 
 const Record = require("./models/record.js");
 const Batch = require("./models/batch.js");
@@ -116,6 +117,7 @@ const createRecord = async function(page, site, batchTime, mongodbCallback) {
   if (record) {
     console.log(`+ ${record.site.title} saved to mongodb`);
     mongodbCallback(record.id);
+    return record;
   }
 };
 
@@ -142,29 +144,57 @@ const createBatch = async () => {
   await page.setDefaultNavigationTimeout(60000);
 
   // build an array of record ids to store on the Batch when finished
+	// pass this callback to createRecord() to add the new record's id to batch's array
   let recordIds = [];
-
-  // pass this callback to createRecord() to add the new record's id to batch's array
   const addRecordInfoToBatch = function(id) {
     console.log("+ added id to batch array");
     recordIds.push(id);
   };
 
+  // get common words to add to batch
+  let frequencies = {};
+  function addRecordToWordTracking(record) {
+   const links = record.content.links;
+   console.log(links);
+   for(let link of links) {
+     let string = link.text;
+     const cleanString = string.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()"']/g,"");
+		 let words = cleanString.split(' '),
+			 word, frequency, i;
+
+		 for( i=0; i<words.length; i++ ) {
+			 word = words[i].toLowerCase();
+			 if(stopWords.indexOf(word) > -1) {
+			   continue
+       } else {
+				 frequencies[word] = frequencies[word] || 0;
+				 frequencies[word]++;
+       }
+		 }
+   }
+  }
+
   // create a new record for all sites
   for (let site of sites) {
     //.....create a single record
-    await to(createRecord(page, site, batchTime, addRecordInfoToBatch));
-		logMemoryUsage()
+    let record;
+    [err, record] = await to(createRecord(page, site, batchTime, addRecordInfoToBatch));
+		addRecordToWordTracking(record);
+		// logMemoryUsage();
 
 		//console.log('Memory Usage', 'RSS:', usage);
     if (err) console.error("Error", err);
   }
 
+	let words = Object.keys( frequencies );
+	const commonWords = words.sort(function (a,b) { return frequencies[b] -frequencies[a];}).slice(0,10).toString();
+
   //.....create the batch entry
   [err, batch] = await to(
     Batch.create({
       id: batchTime,
-      records: recordIds
+      records: recordIds,
+      tags: commonWords
     })
   );
   if (err) console.error("Error", err);
