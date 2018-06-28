@@ -1,8 +1,9 @@
 const cloudinary = require("cloudinary");
 const puppeteer = require("puppeteer");
 const intoStream = require("into-stream");
-const util = require('util');
-const stopWords = require('./lib/stopWords');
+const util = require("util");
+const stopWords = require("./lib/stopWords");
+const gramophone = require("gramophone");
 
 const Record = require("./models/record.js");
 const Batch = require("./models/batch.js");
@@ -12,7 +13,7 @@ const prepPageForScreenshot = require("./lib/prepPageForScreenshot.js");
 const scrape = require("./lib/scrape.js");
 const sites = require("./sites");
 const logMemoryUsage = require("./lib/logMemoryUsage.js");
-const bytes = require('bytes');
+const bytes = require("bytes");
 
 cloudinary.config({
   cloud_name: "ryanjyost",
@@ -133,7 +134,9 @@ const createBatch = async () => {
   console.log(`Starting Batch ${batchTime}... `);
 
   //.....launch headless chrome instance
-  [err, browser] = await to(puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']}));
+  [err, browser] = await to(
+    puppeteer.launch({ args: ["--no-sandbox", "--disable-setuid-sandbox"] })
+  );
   if (err) console.error("Error", err);
 
   //.....create a new browser page
@@ -144,7 +147,7 @@ const createBatch = async () => {
   await page.setDefaultNavigationTimeout(60000);
 
   // build an array of record ids to store on the Batch when finished
-	// pass this callback to createRecord() to add the new record's id to batch's array
+  // pass this callback to createRecord() to add the new record's id to batch's array
   let recordIds = [];
   const addRecordInfoToBatch = function(id) {
     console.log("+ added id to batch array");
@@ -152,51 +155,78 @@ const createBatch = async () => {
   };
 
   // get common words to add to batch
-  let frequencies = {};
+  let combinedText = "";
   function addRecordToWordTracking(record) {
-   const links = record.content.links;
-   console.log(links);
-   for(let link of links) {
-     let string = link.text;
-     const cleanString = string.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()"']/g,"");
-		 let words = cleanString.split(' '),
-			 word, frequency, i;
+    const links = record.content.links;
+    // for(let link of links) {
+    //   let string = link.text;
+    //   const cleanString = string.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()"']/g,"");
+    //  let words = cleanString.split(' '),
+    // 	 word, frequency, i;
+    //
+    //  for( i=0; i<words.length; i++ ) {
+    // 	 word = words[i].toLowerCase();
+    // 	 if(stopWords.indexOf(word) > -1) {
+    // 	   continue
+    //     } else {
+    // 		 frequencies[word] = frequencies[word] || 0;
+    // 		 frequencies[word]++;
+    //     }
+    //  }
+    // }
 
-		 for( i=0; i<words.length; i++ ) {
-			 word = words[i].toLowerCase();
-			 if(stopWords.indexOf(word) > -1) {
-			   continue
-       } else {
-				 frequencies[word] = frequencies[word] || 0;
-				 frequencies[word]++;
-       }
-		 }
-   }
+    for (let link of links) {
+      let string = link.text;
+      //let cleanString = string.replace(/[,\/#!$%\^&\*;:{}=_`~()]/g, "");
+      combinedText = combinedText + " " + string;
+    }
   }
 
   // create a new record for all sites
   for (let site of sites) {
     //.....create a single record
     let record;
-    [err, record] = await to(createRecord(page, site, batchTime, addRecordInfoToBatch));
-		addRecordToWordTracking(record);
-		// logMemoryUsage();
+    [err, record] = await to(
+      createRecord(page, site, batchTime, addRecordInfoToBatch)
+    );
+    addRecordToWordTracking(record);
+    logMemoryUsage();
 
-		//console.log('Memory Usage', 'RSS:', usage);
+    //console.log('Memory Usage', 'RSS:', usage);
     if (err) console.error("Error", err);
   }
 
-	let words = Object.keys( frequencies );
-	const commonWords = words.sort(function (a,b) { return frequencies[b] -frequencies[a];}).slice(0,10).toString();
+  const frequencies = gramophone.extract(combinedText, {
+    score: true,
+    limit: 30
+  });
 
-  //.....create the batch entry
+  const topTags = frequencies.filter(tag => {
+    const termArray = tag.term.split(" ");
+    let tooShort = false;
+    if (termArray.length > 1) {
+      tooShort = termArray.find(term => {
+        return term.length < 2;
+      });
+    } else {
+      tooShort = tag.term.length < 4;
+    }
+
+    if (tooShort) {
+      return false;
+    } else {
+      return tag.tf >= 5;
+    }
+  });
+
   [err, batch] = await to(
     Batch.create({
       id: batchTime,
       records: recordIds,
-      tags: commonWords
+      tags: topTags
     })
   );
+
   if (err) console.error("Error", err);
 
   if (batch) {
@@ -204,6 +234,7 @@ const createBatch = async () => {
     console.log(
       `Batch ${batch.id} created with ${batch.records.length} records`
     );
+    console.log(batch);
     console.log("***********************************************");
   }
 

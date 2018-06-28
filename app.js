@@ -7,26 +7,34 @@ const favicon = require("serve-favicon");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const cron = require("node-cron");
-var memwatch = require('memwatch-next');
+const gramophone = require("gramophone");
+var request = require("request");
+
+// const cron = require("node-cron");
+const schedule = require("node-schedule");
+var memwatch = require("memwatch-next");
 
 const app = express();
 
 //======================================
 // Create a new batch of records
 const createBatch = require("./createBatch");
-createBatch();
+//createBatch();
+// request('https://github.com/substack/stream-handbook/blob/master/readme.markdown')
+// 	.pipe(gramophone.stream({ngrams: 2, html: true, limit: 2}))
+// 	.on('data', console.error.bind(console));
+
+const j = schedule.scheduleJob("0 * * * *", function() {
+  createBatch();
+});
 
 // schedule tasks to be run on the server
-// cron.schedule("*/5 * * * *", function() {
-// createBatch();
-//   console.log('test')
+// cron.schedule("* */1 * * *", function() {
+//   createBatch();
 // });
 
-
-
-memwatch.on('leak', function(info) {
-  console.log('LEAK', info)
+memwatch.on("leak", function(info) {
+  console.log("LEAK", info);
 });
 
 // memwatch.on('stats', function(stats) {
@@ -72,7 +80,7 @@ app.use(function(err, req, res, next) {
 
 //=================================
 //Listen on port
-app.listen((process.env.PORT || 5000), error => {
+app.listen(process.env.PORT || 5000, error => {
   if (error) console.error(error);
   // console.log("app is running");
 });
