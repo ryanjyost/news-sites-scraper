@@ -41,7 +41,7 @@ const createRecord = async function(page, site, batchTime, mongodbCallback) {
 
   //.....scrape page for top 10 links
   [err, data] = await to(scrapeData(page, site));
-  logMemoryUsage();
+  //logMemoryUsage();
 
   //.....set screen to standard laptop
   [err] = await to(
@@ -95,7 +95,7 @@ const createRecord = async function(page, site, batchTime, mongodbCallback) {
   await readable.pipe(cloudinaryStream);
   [err, cloudinaryResult] = await to(waitForCloudinaryResponse());
   console.log("uploading");
-  logMemoryUsage();
+  //logMemoryUsage();
 
   // save to mongodb
   [err, record] = await to(
@@ -164,7 +164,7 @@ const createBatch = async () => {
   // get common words to add to batch
   let combinedText = "";
   function addRecordToWordTracking(record) {
-    if (record.content) {
+    if (record) {
       const links = record.content.links;
 
       for (let link of links) {
@@ -173,7 +173,7 @@ const createBatch = async () => {
         combinedText = combinedText + " " + string;
       }
     } else {
-      console.log("!!!WORD TRACKING FAILED", record.site.name);
+      console.log("!!!WORD TRACKING FAILED", site);
     }
   }
 
@@ -184,7 +184,7 @@ const createBatch = async () => {
     [err, record] = await to(
       createRecord(page, site, batchTime, addRecordInfoToBatch)
     );
-    addRecordToWordTracking(record);
+    addRecordToWordTracking(record, site);
     logMemoryUsage();
 
     //console.log('Memory Usage', 'RSS:', usage);

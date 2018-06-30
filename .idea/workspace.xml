@@ -16,8 +16,8 @@
       <file leaf-file-name="createBatch.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createBatch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="173" column="7" lean-forward="true" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
+            <state relative-caret-position="258">
+              <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -244,12 +244,12 @@
       <workItem from="1530055302973" duration="128000" />
       <workItem from="1530055633453" duration="8891000" />
       <workItem from="1530150462002" duration="1732000" />
-      <workItem from="1530160825685" duration="5389000" />
+      <workItem from="1530160825685" duration="5896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45994000" />
+    <option name="totallyTimeSpent" value="46501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1280" height="777" extended-state="0" />
@@ -261,8 +261,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298193" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22617124" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3298193" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22617124" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -638,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createBatch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="173" column="7" lean-forward="true" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
+        <state relative-caret-position="258">
+          <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
         </state>
       </provider>
     </entry>
