@@ -164,7 +164,7 @@ const createBatch = async () => {
   // get common words to add to batch
   let combinedText = "";
   function addRecordToWordTracking(record) {
-    try {
+    if (record.content) {
       const links = record.content.links;
 
       for (let link of links) {
@@ -172,8 +172,8 @@ const createBatch = async () => {
         //let cleanString = string.replace(/[,\/#!$%\^&\*;:{}=_`~()]/g, "");
         combinedText = combinedText + " " + string;
       }
-    } catch (e) {
-      console.log("Error adding text", e);
+    } else {
+      console.log("!!!WORD TRACKING FAILED", record.site.name);
     }
   }
 
