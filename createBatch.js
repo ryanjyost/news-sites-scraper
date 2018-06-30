@@ -164,28 +164,16 @@ const createBatch = async () => {
   // get common words to add to batch
   let combinedText = "";
   function addRecordToWordTracking(record) {
-    const links = record.content.links;
-    // for(let link of links) {
-    //   let string = link.text;
-    //   const cleanString = string.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()"']/g,"");
-    //  let words = cleanString.split(' '),
-    // 	 word, frequency, i;
-    //
-    //  for( i=0; i<words.length; i++ ) {
-    // 	 word = words[i].toLowerCase();
-    // 	 if(stopWords.indexOf(word) > -1) {
-    // 	   continue
-    //     } else {
-    // 		 frequencies[word] = frequencies[word] || 0;
-    // 		 frequencies[word]++;
-    //     }
-    //  }
-    // }
+    try {
+      const links = record.content.links;
 
-    for (let link of links) {
-      let string = link.text;
-      //let cleanString = string.replace(/[,\/#!$%\^&\*;:{}=_`~()]/g, "");
-      combinedText = combinedText + " " + string;
+      for (let link of links) {
+        let string = link.text;
+        //let cleanString = string.replace(/[,\/#!$%\^&\*;:{}=_`~()]/g, "");
+        combinedText = combinedText + " " + string;
+      }
+    } catch (e) {
+      console.log("Error adding text", e);
     }
   }
 
