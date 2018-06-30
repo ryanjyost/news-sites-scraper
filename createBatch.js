@@ -163,7 +163,7 @@ const createBatch = async () => {
 
   // get common words to add to batch
   let combinedText = "";
-  function addRecordToWordTracking(record) {
+  function addRecordToWordTracking(record, site) {
     if (record) {
       const links = record.content.links;
 
