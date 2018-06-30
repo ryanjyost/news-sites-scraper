@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9255629-4c6b-44d4-af9f-be606b99b30e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/createBatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/createBatch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Source.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Source.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,61 +19,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="createBatch.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/createBatch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="172" column="51" lean-forward="true" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrape.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/scrape.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3660">
-              <caret line="269" column="61" lean-forward="true" selection-start-line="269" selection-start-column="61" selection-end-line="269" selection-end-column="61" />
-              <folding>
-                <element signature="e#216#283#0" />
-                <element signature="e#390#790#0" />
-                <element signature="e#496#743#0" />
-                <element signature="e#559#701#0" />
-                <element signature="e#819#886#0" />
-                <element signature="e#974#1563#0" />
-                <element signature="e#1115#1516#0" />
-                <element signature="e#1183#1474#0" />
-                <element signature="e#1224#1264#0" />
-                <element signature="e#1306#1460#0" />
-                <element signature="e#1336#1442#0" />
-                <element signature="e#1591#1658#0" />
-                <element signature="e#1744#2495#0" />
-                <element signature="e#1968#2448#0" />
-                <element signature="e#2034#2407#0" />
-                <element signature="e#2075#2115#0" />
-                <element signature="e#2121#2393#0" />
-                <element signature="e#2270#2375#0" />
-                <element signature="e#2523#2590#0" />
-                <element signature="e#2680#3357#0" />
-                <element signature="e#2946#3310#0" />
-                <element signature="e#3014#3269#0" />
-                <element signature="e#3055#3095#0" />
-                <element signature="e#3101#3255#0" />
-                <element signature="e#3131#3237#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Source.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Source.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="44" />
+            <state relative-caret-position="640">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sites.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -75,8 +58,17 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+            <state relative-caret-position="230">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sample.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sample.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -143,15 +135,16 @@
         <option value="$PROJECT_DIR$/lib/stopWords.json" />
         <option value="$PROJECT_DIR$/models/batch.js" />
         <option value="$PROJECT_DIR$/lib/stopWords.js" />
-        <option value="$PROJECT_DIR$/sites.js" />
         <option value="$PROJECT_DIR$/lib/logMemoryUsage.js" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/lib/scrape.js" />
-        <option value="$PROJECT_DIR$/lib/Source.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/ecosystem.config.js" />
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/lib/Source.js" />
         <option value="$PROJECT_DIR$/createBatch.js" />
+        <option value="$PROJECT_DIR$/sites.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/sample.js" />
       </list>
     </option>
   </component>
@@ -171,7 +164,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="4" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
@@ -189,11 +182,6 @@
             <path>
               <item name="site-shots" type="b2602c69:ProjectViewProjectNode" />
               <item name="site-shots" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="site-shots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="site-shots" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,15 +232,17 @@
       <workItem from="1530055302973" duration="128000" />
       <workItem from="1530055633453" duration="8891000" />
       <workItem from="1530150462002" duration="1732000" />
-      <workItem from="1530160825685" duration="6500000" />
+      <workItem from="1530160825685" duration="7217000" />
+      <workItem from="1530335254743" duration="1093000" />
+      <workItem from="1530378384808" duration="2925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47105000" />
+    <option name="totallyTimeSpent" value="51840000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1280" height="777" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -261,11 +251,10 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3298193" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22617124" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32941177" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23263328" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -275,10 +264,14 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -289,13 +282,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/createBatch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4000">
@@ -512,9 +498,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js" />
     <entry file="file://$PROJECT_DIR$/ecosystem.json" />
     <entry file="file://$PROJECT_DIR$/lib/logMemoryUsage.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -547,9 +531,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/uploadToClodinary.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/uploadToClodinary.js" />
     <entry file="file://$PROJECT_DIR$/models/batch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -557,31 +539,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/routes/index.js" />
+    <entry file="file://$PROJECT_DIR$/ecosystem.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+        <state relative-caret-position="220">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/scrape.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3660">
-          <caret line="269" column="61" lean-forward="true" selection-start-line="269" selection-start-column="61" selection-end-line="269" selection-end-column="61" />
+          <caret line="269" column="61" selection-start-line="269" selection-start-column="61" selection-end-line="269" selection-end-column="61" />
           <folding>
             <element signature="e#216#283#0" />
             <element signature="e#390#790#0" />
@@ -612,34 +581,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Source.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/createBatch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#522#626#0" />
+            <element signature="e#630#652#0" />
+            <element signature="e#699#988#0" />
+            <element signature="e#991#1010#0" />
+            <element signature="e#1571#1640#0" />
+            <element signature="e#2173#2348#0" />
+            <element signature="e#2236#2311#0" />
+            <element signature="e#2420#2485#0" />
+            <element signature="e#2508#2778#0" />
+            <element signature="e#2525#2678#0" />
+            <element signature="e#3028#3283#0" />
+            <element signature="e#3133#3225#0" />
+            <element signature="e#3242#3277#0" />
+            <element signature="e#3346#3462#0" />
+            <element signature="e#3467#3539#0" />
+            <element signature="e#3572#6485#0" />
+            <element signature="e#3944#4089#0" />
+            <element signature="e#3980#4083#0" />
+            <element signature="e#4355#4422#0" />
+            <element signature="e#4575#4650#0" />
+            <element signature="e#4765#5103#0" />
+            <element signature="e#4783#5034#0" />
+            <element signature="e#4858#5028#0" />
+            <element signature="e#5040#5099#0" />
+            <element signature="e#5170#5484#0" />
+            <element signature="e#5541#5577#0" />
+            <element signature="e#5625#5958#0" />
+            <element signature="e#5726#5817#0" />
+            <element signature="e#5768#5809#0" />
+            <element signature="e#5823#5868#0" />
+            <element signature="e#5888#5915#0" />
+            <element signature="e#5921#5954#0" />
+            <element signature="e#6006#6080#0" />
+            <element signature="e#6142#6402#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ecosystem.config.js">
+    <entry file="file://$PROJECT_DIR$/lib/Source.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        <state relative-caret-position="230">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="44" />
+        <state relative-caret-position="640">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createBatch.js">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="172" column="51" lean-forward="true" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
+        <state relative-caret-position="40">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
         </state>
       </provider>
     </entry>

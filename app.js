@@ -18,9 +18,10 @@ require("dotenv").config();
 //======================================
 // Create a new batch of records
 const createBatch = require("./createBatch");
-createBatch();
-// const test = new Source();
-// console.log(test);
+//createBatch();
+
+const test = new Source({ name: "TEST" });
+console.log(test);
 
 // request('https://github.com/substack/stream-handbook/blob/master/readme.markdown')
 // 	.pipe(gramophone.stream({ngrams: 2, html: true, limit: 2}))

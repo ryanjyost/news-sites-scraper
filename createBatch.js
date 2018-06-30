@@ -94,7 +94,6 @@ const createRecord = async function(page, site, batchTime, mongodbCallback) {
   // upload file
   await readable.pipe(cloudinaryStream);
   [err, cloudinaryResult] = await to(waitForCloudinaryResponse());
-  console.log("uploading");
   //logMemoryUsage();
 
   // save to mongodb
