@@ -29,14 +29,6 @@ createBatch();
 //   createBatch();
 // });
 
-memwatch.on("leak", function(info) {
-  console.log("LEAK", info);
-});
-
-memwatch.on("stats", function(stats) {
-  console.log("GC", stats);
-});
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -76,7 +68,7 @@ app.use(function(err, req, res, next) {
 
 //=================================
 //Listen on port
-app.listen(process.env.PORT || 5000, error => {
+app.listen(process.env.PORT || 9000, error => {
   if (error) console.error(error);
   // console.log("app is running");
 });
