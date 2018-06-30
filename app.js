@@ -6,16 +6,22 @@ const db = require("./db");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const Source = require("./lib/Source.js");
 
 // const cron = require("node-cron");
 const schedule = require("node-schedule");
 
 const app = express();
 
+require("dotenv").config();
+
 //======================================
 // Create a new batch of records
 const createBatch = require("./createBatch");
 createBatch();
+// const test = new Source();
+// console.log(test);
+
 // request('https://github.com/substack/stream-handbook/blob/master/readme.markdown')
 // 	.pipe(gramophone.stream({ngrams: 2, html: true, limit: 2}))
 // 	.on('data', console.error.bind(console));
@@ -28,6 +34,10 @@ createBatch();
 // cron.schedule("* */1 * * *", function() {
 //   createBatch();
 // });
+
+process.on("uncaughtException", function(err) {
+  console.log("Caught exception: ", err);
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
