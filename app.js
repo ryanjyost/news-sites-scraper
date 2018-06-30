@@ -3,30 +3,26 @@
 const express = require("express");
 const path = require("path");
 const db = require("./db");
-const favicon = require("serve-favicon");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const gramophone = require("gramophone");
-var request = require("request");
 
 // const cron = require("node-cron");
 const schedule = require("node-schedule");
-var memwatch = require("memwatch-next");
 
 const app = express();
 
 //======================================
 // Create a new batch of records
 const createBatch = require("./createBatch");
-//createBatch();
+createBatch();
 // request('https://github.com/substack/stream-handbook/blob/master/readme.markdown')
 // 	.pipe(gramophone.stream({ngrams: 2, html: true, limit: 2}))
 // 	.on('data', console.error.bind(console));
 
-const j = schedule.scheduleJob("0 * * * *", function() {
-  createBatch();
-});
+// const j = schedule.scheduleJob("0 * * * *", function() {
+//   createBatch();
+// });
 
 // schedule tasks to be run on the server
 // cron.schedule("* */1 * * *", function() {
@@ -37,9 +33,9 @@ memwatch.on("leak", function(info) {
   console.log("LEAK", info);
 });
 
-// memwatch.on('stats', function(stats) {
-// 	console.log('GC', stats)
-// });
+memwatch.on("stats", function(stats) {
+  console.log("GC", stats);
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

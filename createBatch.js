@@ -1,8 +1,6 @@
 const cloudinary = require("cloudinary");
 const puppeteer = require("puppeteer");
 const intoStream = require("into-stream");
-const util = require("util");
-const stopWords = require("./lib/stopWords");
 const gramophone = require("gramophone");
 
 const Record = require("./models/record.js");
@@ -13,7 +11,6 @@ const prepPageForScreenshot = require("./lib/prepPageForScreenshot.js");
 const scrape = require("./lib/scrape.js");
 const sites = require("./sites");
 const logMemoryUsage = require("./lib/logMemoryUsage.js");
-const bytes = require("bytes");
 
 cloudinary.config({
   cloud_name: "ryanjyost",
@@ -44,6 +41,7 @@ const createRecord = async function(page, site, batchTime, mongodbCallback) {
 
   //.....scrape page for top 10 links
   [err, data] = await to(scrapeData(page, site));
+  logMemoryUsage();
 
   //.....set screen to standard laptop
   [err] = await to(
@@ -96,6 +94,8 @@ const createRecord = async function(page, site, batchTime, mongodbCallback) {
   // upload file
   await readable.pipe(cloudinaryStream);
   [err, cloudinaryResult] = await to(waitForCloudinaryResponse());
+  console.log("uploading");
+  logMemoryUsage();
 
   // save to mongodb
   [err, record] = await to(
@@ -135,7 +135,14 @@ const createBatch = async () => {
 
   //.....launch headless chrome instance
   [err, browser] = await to(
-    puppeteer.launch({ args: ["--no-sandbox", "--disable-setuid-sandbox"] })
+    puppeteer.launch({
+      headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    })
   );
   if (err) console.error("Error", err);
 
