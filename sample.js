@@ -8,9 +8,9 @@ var uuid = require("uuid");
 var keyName = "hello_world.txt";
 
 const config = {
-  apiVersion: "2006-03-01",
-  accessKeyId: process.env.AWS_KEY,
-  secretAccesKey: process.env.AWS_SECRET
+  // apiVersion: "2006-03-01",
+  // accessKeyId: process.env.AWS_KEY,
+  // secretAccesKey: process.env.AWS_SECRET
 };
 
 // Create a promise on S3 service object
@@ -25,9 +25,15 @@ var objectParams = {
   Key: keyName,
   Body: "Hello World!"
 };
-// Create object upload promise
-var uploadPromise = new AWS.S3(config).putObject(objectParams).promise();
 
-uploadPromise.then(function(data) {
-  console.log("Successfully uploaded data to S3");
+const s3 = new AWS.S3(config);
+
+// Create object upload promise
+s3.upload(objectParams, {}, function(err, data) {
+  console.log(err, data);
 });
+
+// uploadPromise.then(function(data) {
+//   console.log(data);
+//   console.log("Successfully uploaded data to S3");
+// });

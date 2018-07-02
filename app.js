@@ -21,7 +21,7 @@ const createBatch = require("./createBatch");
 createBatch();
 
 // const test = new Source({ name: "TEST" });
-// console.log(test);
+// test.logSite();
 
 // request('https://github.com/substack/stream-handbook/blob/master/readme.markdown')
 // 	.pipe(gramophone.stream({ngrams: 2, html: true, limit: 2}))
@@ -79,7 +79,7 @@ app.use(function(err, req, res, next) {
 
 //=================================
 //Listen on port
-app.listen(process.env.PORT || 9000, error => {
+app.listen(process.env.PORT || null, error => {
   if (error) console.error(error);
   // console.log("app is running");
 });
