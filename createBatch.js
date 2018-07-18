@@ -104,7 +104,8 @@ const createBatch = async () => {
     Batch.create({
       id: batchTime,
       records: recordIds,
-      tags: topTags
+      tags: topTags,
+      completed_at: new Date()
     })
   );
 

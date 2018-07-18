@@ -3,7 +3,19 @@ module.exports = [
     name: "cnn",
     url: "https://www.cnn.com",
     file: "cnn",
-    title: "CNN"
+    title: "CNN",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+      },
+      {
+        category: "opinion",
+        type: "scrape",
+        url: "https://www.cnn.com/specials/opinion/opinion-politics"
+      }
+    ]
   },
   {
     name: "foxnews",
@@ -11,7 +23,19 @@ module.exports = [
     file: "foxnews",
     logo:
       "http://res.cloudinary.com/ryanjyost/image/upload/v1529257416/logos/foxnews-logo.png",
-    title: "Fox News"
+    title: "Fox News",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://feeds.foxnews.com/foxnews/politics"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://feeds.foxnews.com/foxnews/opinion"
+      }
+    ]
   },
   {
     name: "msnbc",
@@ -19,164 +43,411 @@ module.exports = [
     file: "msnbc",
     logo:
       "http://res.cloudinary.com/ryanjyost/image/upload/v1529257748/logos/msnbc-logo.svg",
-    title: "MSNBC News"
+    title: "MSNBC News",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://www.msnbc.com/feeds/latest"
+      }
+    ]
   },
   {
     name: "bloomberg",
     url: "https://www.bloomberg.com/",
     file: "bloomberg",
-    title: "Bloomberg View"
+    title: "Bloomberg",
+    rss: [
+      {
+        category: "politics",
+        type: "scrape",
+        url: "https://www.bloomberg.com/politics"
+      },
+      {
+        category: "opinion",
+        type: "scrape",
+        url: "https://www.bloomberg.com/opinion"
+      }
+    ]
   },
   {
     name: "nytimes",
     url: "https://www.nytimes.com/",
     file: "nytimes",
-    title: "The New York Times"
+    title: "The New York Times",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+      },
+      {
+        category: "opinion",
+        type: "scrape",
+        url:
+          "https://www.nytimes.com/section/opinion/contributors?action=click&contentCollection=opinion&region=navbar&module=collectionsnav&pagetype=sectionfront&pgtype=sectionfront"
+      }
+    ]
   },
   {
     name: "thenewyorker",
     url: "https://www.newyorker.com/",
     file: "thenewyorker",
-    title: "The New Yorker"
+    title: "The New Yorker",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.newyorker.com/feed/news/news-desk"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://www.newyorker.com/feed/news/daily-comment"
+      }
+    ]
   },
   {
     name: "huffpo",
     url: "https://www.huffingtonpost.com/",
-    title: "The Huffington Post"
-  },
-  {
-    name: "nbcnews",
-    url: "https://www.nbcnews.com/",
-    title: "NBC News"
-  },
-  {
-    name: "dailymail",
-    url: "http://www.dailymail.co.uk/ushome/index.html",
-    title: "Daily Mail"
+    title: "The Huffington Post",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.huffingtonpost.com/section/politics/feed"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://www.huffingtonpost.com/section/opinion/feed"
+      }
+    ]
   },
   {
     name: "guardian",
     url: "https://www.theguardian.com/us",
-    title: "The Guardian"
+    title: "The Guardian",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.theguardian.com/world/rss"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://www.theguardian.com/us/commentisfree/rss"
+      }
+    ]
   },
   {
     name: "wsj",
     url: "https://www.wsj.com/",
-    title: "The Wall Street Journal"
+    title: "The Wall Street Journal",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://www.wsj.com/xml/rss/3_7085.xml"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://www.wsj.com/xml/rss/3_7041.xml"
+      }
+    ]
   },
   {
     name: "abcnews",
     url: "https://abcnews.go.com/",
-    title: "ABC News"
+    title: "ABC News",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://abcnews.go.com/abcnews/politicsheadlines"
+      }
+    ]
   },
   {
     name: "bbcnews",
     url: "http://www.bbc.com/",
-    title: "BBC News"
+    title: "BBC News",
+    rss: [
+      {
+        category: "politics",
+        type: "scrape",
+        url: "http://www.bbc.com/"
+      }
+    ]
   },
   {
     name: "usatoday",
     url: "https://www.usatoday.com/",
-    title: "USA Today"
+    title: "USA Today",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://rssfeeds.usatoday.com/UsatodaycomWashington-TopStories"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://rssfeeds.usatoday.com/News-Opinion"
+      }
+    ]
   },
   {
     name: "latimes",
     url: "http://www.latimes.com/",
-    title: "Los Angeles Times"
+    title: "Los Angeles Times",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://www.latimes.com/nation/politics/rss2.0.xml"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://www.latimes.com/opinion/op-ed/rss2.0.xml"
+      }
+    ]
   },
   {
     name: "cbsnews",
     url: "https://www.cbsnews.com/",
-    title: "CBS News"
+    title: "CBS News",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.cbsnews.com/latest/rss/politics"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://www.cbsnews.com/latest/rss/opinion"
+      }
+    ]
   },
   {
     name: "reuters",
     url: "https://www.reuters.com/",
-    title: "Reuters"
+    title: "Reuters",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://feeds.reuters.com/Reuters/PoliticsNews"
+      }
+    ]
   },
   {
     name: "thehill",
     url: "http://thehill.com/",
-    title: "The Hill"
+    title: "The Hill",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://thehill.com/rss/syndicator/19109"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://thehill.com/taxonomy/term/1116/feed"
+      }
+    ]
   },
   {
     name: "time",
     url: "http://time.com/",
-    title: "Time"
+    title: "Time",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://feeds.feedburner.com/timeblogs/swampland"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://feeds.feedburner.com/time/ideas"
+      }
+    ]
   },
   {
     name: "nationalreview",
     url: "https://www.nationalreview.com/",
-    title: "National Review"
+    title: "National Review",
+    rss: [
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://www.nationalreview.com/feed/"
+      }
+    ]
   },
   {
     name: "theatlantic",
     url: "https://www.theatlantic.com/",
-    title: "The Atlantic"
+    title: "The Atlantic",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.theatlantic.com/feed/channel/politics/"
+      }
+    ]
   },
   {
     name: "politico",
     url: "https://www.politico.com/",
-    title: "Politico"
-  },
-  {
-    name: "theweeklystandard",
-    url: "https://www.weeklystandard.com/",
-    title: "The Weekly Standard"
+    title: "Politico",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.politico.com/rss/politics08.xml"
+      }
+    ]
   },
   {
     name: "vox",
     url: "https://www.vox.com/",
-    title: "Vox"
+    title: "Vox",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.vox.com/rss/index.xml"
+      }
+    ]
   },
   {
     name: "washingtontimes",
     url: "https://www.washingtontimes.com/",
-    title: "The Washington Times"
+    title: "The Washington Times",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.washingtontimes.com/rss/headlines/news/politics/"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://www.washingtontimes.com/rss/headlines/opinion/"
+      }
+    ]
   },
   {
     name: "slate",
     url: "https://slate.com/",
-    title: "Slate Magazine"
+    title: "Slate Magazine",
+    rss: [
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://feeds.slate.com/slate-101526"
+      }
+    ]
   },
   {
     name: "washingtonexaminer",
     url: "https://www.washingtonexaminer.com/",
-    title: "The Washington Examiner"
+    title: "The Washington Examiner",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://www.washingtonexaminer.com/tag/politics.rss"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://www.washingtonexaminer.com/tag/opinion.rss"
+      }
+    ]
   },
   {
     name: "dailybeast",
     url: "https://www.thedailybeast.com/",
-    title: "The Daily Best"
+    title: "The Daily Beast",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://feeds.thedailybeast.com/rss/articles"
+      }
+    ]
   },
   {
     name: "federalist",
     url: "http://thefederalist.com/",
-    title: "The Federalist"
+    title: "The Federalist",
+    rss: [
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://thefederalist.com/feed/"
+      }
+    ]
   },
   {
     name: "newrepublic",
     url: "https://newrepublic.com/",
-    title: "The New Republic"
+    title: "The New Republic",
+    rss: [
+      {
+        category: "opinion",
+        type: "rss",
+        url: "https://newrepublic.com/rss.xml"
+      }
+    ]
   },
   {
     name: "drudge",
     url: "http://www.drudgereport.com/",
-    title: "Drudge Report"
-  },
-  {
-    name: "dailykos",
-    url: "https://www.dailykos.com/",
-    title: "Daily Kos"
+    title: "Drudge Report",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://feeds.feedburner.com/DrudgeReportFeed"
+      }
+    ]
   },
   {
     name: "newyorkpost",
     url: "https://nypost.com/",
-    title: "New York Post"
+    title: "New York Post",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "https://nypost.com/news/feed/"
+      }
+    ]
   },
   {
     name: "dailycaller",
     url: "http://dailycaller.com/",
-    title: "The Daily Caller"
+    title: "The Daily Caller",
+    rss: [
+      {
+        category: "politics",
+        type: "rss",
+        url: "http://feeds.feedburner.com/dailycaller"
+      },
+      {
+        category: "opinion",
+        type: "rss",
+        url: "http://feeds.feedburner.com/dailycaller-opinion"
+      }
+    ]
   }
 ];
