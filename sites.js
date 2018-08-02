@@ -8,7 +8,7 @@ module.exports = [
       {
         category: "politics",
         type: "rss",
-        url: "https://rss.cnn.com/rss/cnn_allpolitics.rss"
+        url: "http://rss.cnn.com/rss/cnn_allpolitics.rss"
       }
       // {
       //   category: "opinion",
@@ -28,12 +28,12 @@ module.exports = [
       {
         category: "politics",
         type: "rss",
-        url: "https://feeds.foxnews.com/foxnews/politics"
+        url: "http://feeds.foxnews.com/foxnews/politics"
       },
       {
         category: "opinion",
         type: "rss",
-        url: "https://feeds.foxnews.com/foxnews/opinion"
+        url: "http://feeds.foxnews.com/foxnews/opinion"
       }
     ]
   },
@@ -190,12 +190,12 @@ module.exports = [
       {
         category: "politics",
         type: "rss",
-        url: "https://rssfeeds.usatoday.com/UsatodaycomWashington-TopStories"
+        url: "http://rssfeeds.usatoday.com/UsatodaycomWashington-TopStories"
       },
       {
         category: "opinion",
         type: "rss",
-        url: "https://rssfeeds.usatoday.com/News-Opinion"
+        url: "http://rssfeeds.usatoday.com/News-Opinion"
       }
     ]
   },
@@ -241,7 +241,7 @@ module.exports = [
       {
         category: "politics",
         type: "rss",
-        url: "https://feeds.reuters.com/Reuters/PoliticsNews"
+        url: "http://feeds.reuters.com/Reuters/PoliticsNews"
       }
     ]
   },
