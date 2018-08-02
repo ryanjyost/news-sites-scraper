@@ -9,18 +9,28 @@ const db = require("./db");
 
 const createBatch = require("./createBatch");
 const getRoundOfFeeds = require("./lib/getRoundOfArticles");
+const twitter = require("./lib/twitter");
+const scrapeForMetaAndText = require("./lib/scrapeForMetaAndText");
 
 const app = express();
 
 require("dotenv").config();
 
 //======================================
-// Create a new batch of records
+// Create a new batch of records/screenshots
 createBatch();
 
 //======================================
 // RSS Feeds
 getRoundOfFeeds();
+
+//======================================
+// Tweets
+//twitter();
+
+//======================================
+// Scrape Data
+// scrapeForMetaAndText();
 
 // process.on("uncaughtException", function(err) {
 //   console.log("Caught exception: ", err);

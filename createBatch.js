@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer");
 const gramophone = require("gramophone");
+const Parallel = require("async-parallel");
 
 const Batch = require("./models/batch.js");
 
@@ -37,7 +38,7 @@ const createBatch = async () => {
   if (err) console.error("Error", err);
 
   //.....increase default navigation timeout
-  await page.setDefaultNavigationTimeout(60000);
+  await page.setDefaultNavigationTimeout(10000);
 
   // build an array of record ids to store on the Batch when finished
   // pass this callback to createRecord() to add the new record's id to batch's array
@@ -48,20 +49,6 @@ const createBatch = async () => {
   };
 
   // get common words to add to batch
-  let combinedText = "";
-  function addRecordToWordTracking(record, site) {
-    if (record) {
-      const links = record.content.links;
-
-      for (let link of links) {
-        let string = link.text;
-        //let cleanString = string.replace(/[,\/#!$%\^&\*;:{}=_`~()]/g, "");
-        combinedText = combinedText + " " + string;
-      }
-    } else {
-      console.log("!!!WORD TRACKING FAILED", site);
-    }
-  }
 
   // create a new record for all sites
   for (let site of sites) {
@@ -70,41 +57,48 @@ const createBatch = async () => {
     [err, record] = await to(
       createRecord(page, site, batchTime, addRecordInfoToBatch)
     );
-    addRecordToWordTracking(record, site);
-    logMemoryUsage();
+    // addRecordToWordTracking(record, site);
+    //logMemoryUsage();
 
     //console.log('Memory Usage', 'RSS:', usage);
     if (err) console.error("Error", err);
   }
+  //
+  // let record;
+  // await Parallel.each(sites, async site => {
+  //   [err, record] = await to(
+  //     createRecord(page, site, batchTime, addRecordInfoToBatch)
+  //   );
+  // });
 
-  const frequencies = gramophone.extract(combinedText, {
-    score: true,
-    limit: 30
-  });
-
-  const topTags = frequencies.filter(tag => {
-    const termArray = tag.term.split(" ");
-    let tooShort = false;
-    if (termArray.length > 1) {
-      tooShort = termArray.find(term => {
-        return term.length < 2;
-      });
-    } else {
-      tooShort = tag.term.length < 4;
-    }
-
-    if (tooShort) {
-      return false;
-    } else {
-      return tag.tf >= 5;
-    }
-  });
+  // const frequencies = gramophone.extract(combinedText, {
+  //   score: true,
+  //   limit: 30
+  // });
+  //
+  // const topTags = frequencies.filter(tag => {
+  //   const termArray = tag.term.split(" ");
+  //   let tooShort = false;
+  //   if (termArray.length > 1) {
+  //     tooShort = termArray.find(term => {
+  //       return term.length < 2;
+  //     });
+  //   } else {
+  //     tooShort = tag.term.length < 4;
+  //   }
+  //
+  //   if (tooShort) {
+  //     return false;
+  //   } else {
+  //     return tag.tf >= 5;
+  //   }
+  // });
 
   [err, batch] = await to(
     Batch.create({
       id: batchTime,
       records: recordIds,
-      tags: topTags,
+      // tags: topTags,
       completed_at: new Date()
     })
   );
