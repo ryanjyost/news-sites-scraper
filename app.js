@@ -18,7 +18,7 @@ require("dotenv").config();
 
 //======================================
 // Create a new batch of records/screenshots
-createBatch();
+//createBatch();
 
 //======================================
 // RSS Feeds
