@@ -52,16 +52,18 @@ const createBatch = async () => {
 
   // create a new record for all sites
   for (let site of sites) {
-    //.....create a single record
-    let record;
-    [err, record] = await to(
-      createRecord(page, site, batchTime, addRecordInfoToBatch)
-    );
-    // addRecordToWordTracking(record, site);
-    //logMemoryUsage();
+    if (site.name !== "bloomberg") {
+      //.....create a single record
+      let record;
+      [err, record] = await to(
+        createRecord(page, site, batchTime, addRecordInfoToBatch)
+      );
+      // addRecordToWordTracking(record, site);
+      //logMemoryUsage();
 
-    //console.log('Memory Usage', 'RSS:', usage);
-    if (err) console.error("Error", err);
+      //console.log('Memory Usage', 'RSS:', usage);
+      if (err) console.error("Error", err);
+    }
   }
   //
   // let record;
