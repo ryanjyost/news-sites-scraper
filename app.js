@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const db = require("./db");
 
 const createBatch = require("./createBatch");
-const getRoundOfFeeds = require("./lib/getRoundOfArticles");
+const getRoundOfArticles = require("./lib/getRoundOfArticles");
 const twitter = require("./lib/twitter");
 const scrapeForMetaAndText = require("./lib/scrapeForMetaAndText");
 
@@ -22,7 +22,7 @@ createBatch();
 
 //======================================
 // RSS Feeds
-getRoundOfFeeds();
+getRoundOfArticles();
 
 //======================================
 // Tweets
