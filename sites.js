@@ -347,7 +347,7 @@ module.exports = [
   {
     name: "dailybeast",
     url: "https://www.thedailybeast.com/",
-    title: "The Daily Best",
+    title: "The Daily Beast",
     rss: [
       {
         category: "politics",

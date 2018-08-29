@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pm2 start ecosystem.config.js",
     "start": "node app.js",
-    "cron": "pm2 start app.js --cron '*/15 * * * *'"
+    "cron": "pm2 start app.js --max-memory-restart 1500M --cron '*/15 * * * *'"
   },
   "dependencies": {
     "async-parallel": "^1.2.3",
@@ -17,12 +17,14 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "dotenv": "^6.0.0",
+    "event-stream": "^3.3.4",
     "express": "~4.14.0",
     "feedparser": "^2.2.9",
     "got": "^8.3.2",
     "gramophone": "0.0.3",
     "hbs": "~4.0.1",
     "into-stream": "^3.1.0",
+    "lodash": "^4.17.10",
     "metascraper": "^3.11.8",
     "mongoose": "^5.0.16",
     "mongoose-unique-validator": "^2.0.1",
@@ -38,8 +40,11 @@
     "sentiment": "^5.0.1",
     "speakeasy-nlp": "^0.2.13",
     "stopwords": "0.0.9",
+    "stream": "0.0.2",
     "striptags": "^3.1.1",
     "twitter": "^1.7.1",
+    "underscore.string": "^3.3.4",
+    "util": "^0.11.0",
     "uuid": "^3.3.2"
   }
 }
