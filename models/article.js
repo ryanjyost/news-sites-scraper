@@ -15,11 +15,11 @@ const articleSchema = new mongoose.Schema({
     url: String,
     title: String
   },
-  siteName: String,
+  siteName: { type: String, index: true },
   created_at: { type: Date, default: new Date() },
   // uploaded_at: String,
-  title: String,
-  summary: String,
+  title: { type: String, index: true },
+  summary: { type: String, index: true },
   description: String,
   link: String,
   origLink: mongoose.Schema.Types.Mixed,
@@ -34,5 +34,6 @@ const articleSchema = new mongoose.Schema({
 });
 
 articleSchema.plugin(uniqueValidator);
+articleSchema.index();
 
 module.exports = mongoose.model("article", articleSchema);
