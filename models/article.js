@@ -15,11 +15,11 @@ const articleSchema = new mongoose.Schema({
     url: String,
     title: String
   },
-  siteName: { type: String, index: true },
+  siteName: { type: String },
   created_at: { type: Date, default: new Date() },
   // uploaded_at: String,
-  title: { type: String, index: true },
-  summary: { type: String, index: true },
+  title: String,
+  summary: String,
   description: String,
   link: String,
   origLink: mongoose.Schema.Types.Mixed,
@@ -27,13 +27,13 @@ const articleSchema = new mongoose.Schema({
   date: String,
   pubate: String,
   author: mongoose.Schema.Types.Mixed,
-  guid: { type: String, index: true, unique: true, required: true },
+  guid: { type: String, unique: true, required: true },
   categories: Array,
   source: mongoose.Schema.Types.Mixed,
   image: mongoose.Schema.Types.Mixed
 });
 
 articleSchema.plugin(uniqueValidator);
-articleSchema.index();
+articleSchema.index({ title: "text", summary: "text", description: "text" });
 
 module.exports = mongoose.model("article", articleSchema);
