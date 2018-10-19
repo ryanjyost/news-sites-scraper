@@ -9,7 +9,6 @@ const db = require("./db");
 
 const createBatch = require("./createBatch");
 const getRoundOfArticles = require("./lib/getRoundOfArticles");
-const twitter = require("./lib/twitter");
 const scrapeForMetaAndText = require("./lib/scrapeForMetaAndText");
 
 const app = express();

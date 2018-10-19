@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d9255629-4c6b-44d4-af9f-be606b99b30e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createBatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/createBatch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/createRecord.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/createRecord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/getRoundOfArticles.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getRoundOfArticles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/handleSingleFeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/handleSingleFeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scrapeForArticles.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scrapeForArticles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/twitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,38 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="getRoundOfArticles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/getRoundOfArticles.js">
+      <file leaf-file-name="twitter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/twitter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+            <state relative-caret-position="100">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handleSingleFeed.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/handleSingleFeed.js">
+      <file leaf-file-name="createBatch.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/createBatch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="105" column="31" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/article.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="77" />
+            <state relative-caret-position="610">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -62,8 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>promisepi</find>
-      <find>content</find>
       <find>cloudin</find>
       <find>clo</find>
       <find>var</find>
@@ -87,11 +72,13 @@
       <find>termsToSkip</find>
       <find>filterTags</find>
       <find>stripta</find>
-      <find>termsTo</find>
       <find>stopWords</find>
       <find>ensureIndex</find>
       <find>h</find>
       <find>Article.cre</find>
+      <find>gramophone</find>
+      <find>termsTo</find>
+      <find>twitter</find>
     </findStrings>
     <replaceStrings>
       <replace>const</replace>
@@ -133,23 +120,23 @@
         <option value="$PROJECT_DIR$/models/round.js" />
         <option value="$PROJECT_DIR$/lib/getRoundOfFeeds.js" />
         <option value="$PROJECT_DIR$/lib/scrape.js" />
-        <option value="$PROJECT_DIR$/lib/twitter.js" />
         <option value="$PROJECT_DIR$/lib/openGraph.js" />
-        <option value="$PROJECT_DIR$/lib/createRecord.js" />
         <option value="$PROJECT_DIR$/lib/scrapeForMetaAndText.js" />
-        <option value="$PROJECT_DIR$/createBatch.js" />
         <option value="$PROJECT_DIR$/models/batchOfTags.js" />
         <option value="$PROJECT_DIR$/lib/extractWords.js" />
         <option value="$PROJECT_DIR$/lib/gramophone.js" />
         <option value="$PROJECT_DIR$/sites.js" />
         <option value="$PROJECT_DIR$/lib/stopWordsForExtraction.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/lib/getRoundOfArticles.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/lib/scrapeForArticles.js" />
-        <option value="$PROJECT_DIR$/lib/handleSingleFeed.js" />
         <option value="$PROJECT_DIR$/models/article.js" />
         <option value="$PROJECT_DIR$/db.js" />
+        <option value="$PROJECT_DIR$/lib/createRecord.js" />
+        <option value="$PROJECT_DIR$/lib/getRoundOfArticles.js" />
+        <option value="$PROJECT_DIR$/lib/handleSingleFeed.js" />
+        <option value="$PROJECT_DIR$/lib/scrapeForArticles.js" />
+        <option value="$PROJECT_DIR$/lib/twitter.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/createBatch.js" />
       </list>
     </option>
   </component>
@@ -169,18 +156,17 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="208" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-389" />
     <option name="y" value="-1058" />
-    <option name="width" value="1322" />
-    <option name="height" value="1054" />
+    <option name="width" value="1920" />
+    <option name="height" value="1058" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,12 +177,18 @@
             <path>
               <item name="site-shots" type="b2602c69:ProjectViewProjectNode" />
               <item name="site-shots" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site-shots" type="b2602c69:ProjectViewProjectNode" />
+              <item name="site-shots" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,7 +290,10 @@
       <workItem from="1539313148788" duration="5000" />
       <workItem from="1539315986658" duration="407000" />
       <workItem from="1539392731277" duration="110000" />
-      <workItem from="1539393269305" duration="398000" />
+      <workItem from="1539393269305" duration="513000" />
+      <workItem from="1539491937961" duration="991000" />
+      <workItem from="1539835849968" duration="159000" />
+      <workItem from="1539912301536" duration="562000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <created>1531873878423</created>
@@ -342,14 +337,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539316399134</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="strip tags">
+      <created>1539393728965</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1539393728965</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196536000" />
+    <option name="totallyTimeSpent" value="198363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="208" y="-1058" width="1322" height="1054" extended-state="0" />
+    <frame x="-389" y="-1058" width="1920" height="1058" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -359,9 +361,10 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32199788" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3734375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -372,7 +375,6 @@
       <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,34 +399,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/getRoundOfArticles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/handleSingleFeed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="105" column="31" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/article.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/getRoundOfArticles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
@@ -621,20 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/getRoundOfArticles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -642,24 +602,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/scrapeForArticles.js">
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/customSentiment.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/createRecord.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="126" column="3" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
+        <state relative-caret-position="-140">
+          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/getRoundOfArticles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/handleSingleFeed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="105" column="31" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
+        <state relative-caret-position="520">
+          <caret line="126" column="5" lean-forward="true" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/logMemoryUsage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/openGraph.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/prepPageForScreenshot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4800" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/scrape.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5638" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/scrapeForArticles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="129" column="25" lean-forward="true" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/scrapeForMetaAndText.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Source.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/stopWords.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="3" column="384" lean-forward="true" selection-start-line="3" selection-start-column="384" selection-end-line="3" selection-end-column="384" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/stopWordsForExtraction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2193" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/to.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/article.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="77" />
+        <state relative-caret-position="340">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/batch.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/twitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -667,6 +709,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createBatch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
