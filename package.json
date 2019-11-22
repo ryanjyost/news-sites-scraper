@@ -16,7 +16,7 @@
     "cloudinary": "^1.11.0",
     "compromise": "^11.11.0",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
+    "debug": "~4.1.1",
     "dotenv": "^6.0.0",
     "event-stream": "^3.3.4",
     "express": "~4.14.0",
