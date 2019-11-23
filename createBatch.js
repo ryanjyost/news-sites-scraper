@@ -18,17 +18,23 @@ const createBatch = async () => {
   const batchTime = Date.now();
   console.log(`Starting Batch ${batchTime}... `);
 
+  const pupConfig = {
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
+    ]
+  };
+
+  if (process.env.PUPPETEER_PATH) {
+    pupConfig.executablePath = process.env.PUPPETEER_PATH;
+  }
+
+  console.log("Puppeteer Config", pupConfig);
+
   //.....launch headless chrome instance
-  [err, browser] = await to(
-    puppeteer.launch({
-      headless: true,
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage"
-      ]
-    })
-  );
+  [err, browser] = await to(puppeteer.launch(pupConfig));
   if (err) console.error("Error", err);
 
   //.....create a new browser page
