@@ -5,6 +5,8 @@ const path = require("path");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+
+require("dotenv").config();
 const db = require("./db");
 
 const createBatch = require("./createBatch");
@@ -13,15 +15,13 @@ const scrapeForMetaAndText = require("./lib/scrapeForMetaAndText");
 
 const app = express();
 
-require("dotenv").config();
-
 //======================================
 // Create a new batch of records/screenshots
 createBatch();
 
 //======================================
 // RSS Feeds
-getRoundOfArticles();
+// getRoundOfArticles();
 
 //======================================
 // Tweets

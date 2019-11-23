@@ -7,6 +7,8 @@ const recordSchema = new mongoose.Schema({
     url: String,
     title: String
   },
+  text: String,
+  text_lower: String,
   content: {
     links: Array
   },
