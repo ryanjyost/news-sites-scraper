@@ -7,6 +7,9 @@
     "start": "node app.js",
     "cron": "pm2 start app.js --max-memory-restart 1500M --cron '*/15 * * * *'"
   },
+  "engines": {
+    "node": "10.16.0"
+  },
   "dependencies": {
     "async-parallel": "^1.2.3",
     "aws-sdk": "^2.266.1",
