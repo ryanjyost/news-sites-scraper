@@ -22,7 +22,6 @@
     "express": "~4.14.0",
     "feedparser": "^2.2.9",
     "got": "^8.3.2",
-    "gramophone": "0.0.3",
     "hbs": "~4.0.1",
     "html-entities": "^1.2.1",
     "into-stream": "^3.1.0",
