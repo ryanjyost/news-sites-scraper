@@ -6,7 +6,7 @@
     "dev": "pm2 start ecosystem.config.js",
     "start": "node app.js",
     "cron": "pm2 start app.js --max-memory-restart 1500M --cron '*/15 * * * *' && pm2 monit",
-    "heroku": "pm2-runtime start ecosystem.config.js --env production"
+    "heroku": "pm2-runtime start ecosystem.config.js --env production && pm2 monit"
   },
   "engines": {
     "node": "10.16.0"
