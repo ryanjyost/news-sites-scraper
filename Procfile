@@ -1,1 +1,1 @@
-web: npm run cron
+web: npm run heroku

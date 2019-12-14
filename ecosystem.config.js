@@ -4,8 +4,9 @@ module.exports = {
       name: "siteshots",
       script: "./app.js",
       node_args: ["--inspect"],
-      instances: "max",
-      autorestart: true,
+      instances: "1",
+      // autorestart: true,
+      cron_restart: '*/15 * * * *',
       env: {
         NODE_ENV: "development"
       },
