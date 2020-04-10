@@ -1,11 +1,11 @@
 const puppeteer = require("puppeteer");
-
 const Batch = require("./models/batch.js");
-
+const AWS = require("aws-sdk");
 const to = require("./lib/to.js");
 const createRecord = require("./lib/createRecord.js");
-const sites = require("./sites");
+// const sites = require("./sites");
 const logMemoryUsage = require("./lib/logMemoryUsage.js");
+const fs = require('fs')
 
 /* Handles all screenshots and data scraping for all sites in a batch */
 const createBatch = async () => {
@@ -52,45 +52,76 @@ const createBatch = async () => {
     recordIds.push(id);
   };
 
-  // get common words to add to batch
+  const s3 = new AWS.S3();
+  const params = {
+    Bucket: "birdseyenews",
+    Key: "sites.js",
+    // Range: "bytes=0-9"
+  };
+
+  s3.getObject(params, function(err, data) {
+    if (err) console.log(err, err.stack); // an error occurred
+    const file = data.Body.toString('base64');
+    fs.writeFile('siteList.js', file, {encoding: 'base64'}, async function(err) {
+
+      const sites = require("./siteList.js");
+
+      for (let site of sites) {
+        if (site.name !== "bloomberg") {
+          //.....create a single record
+          let record;
+          [err, record] = await to(
+            createRecord(page, site, batchTime, addRecordInfoToBatch)
+          );
+          //logMemoryUsage();
+
+          if (err) console.error("Error", err);
+        }
+      }
+
+      //.....close Pupputeer
+      await to(page.close());
+      await to(browser.close());
+    });
+  });
 
   // create a new record for all sites
-  for (let site of sites) {
-    if (site.name !== "bloomberg") {
-      //.....create a single record
-      let record;
-      [err, record] = await to(
-        createRecord(page, site, batchTime, addRecordInfoToBatch)
-      );
-      //logMemoryUsage();
+  // for (let site of sites) {
+  //   if (site.name !== "bloomberg") {
+  //     //.....create a single record
+  //     let record;
+  //     [err, record] = await to(
+  //       createRecord(page, site, batchTime, addRecordInfoToBatch)
+  //     );
+  //     //logMemoryUsage();
+  //
+  //     if (err) console.error("Error", err);
+  //   }
+  // }
+  //
+  // [err, batch] = await to(
+  //   Batch.create({
+  //     id: batchTime,
+  //     records: recordIds,
+  //     // tags: topTags,
+  //     completed_at: new Date()
+  //   })
+  // );
 
-      if (err) console.error("Error", err);
-    }
-  }
-
-  [err, batch] = await to(
-    Batch.create({
-      id: batchTime,
-      records: recordIds,
-      // tags: topTags,
-      completed_at: new Date()
-    })
-  );
-
-  if (err) console.error("Error", err);
-
-  if (batch) {
-    console.log("***********************************************");
-    console.log(
-      `Batch ${batch.id} created with ${batch.records.length} records`
-    );
-    console.log(batch);
-    console.log("***********************************************");
-  }
-
-  //.....close Pupputeer
-  await to(page.close());
-  await to(browser.close());
+  // if (err) console.error("Error", err);
+  //
+  // if (batch) {
+  //   console.log("***********************************************");
+  //   console.log(
+  //     `Batch ${batch.id} created with ${batch.records.length} records`
+  //   );
+  //   console.log(batch);
+  //   console.log("***********************************************");
+  // }
+  //
+  // //.....close Pupputeer
+  // await to(page.close());
+  // await to(browser.close());
 };
 
 module.exports = createBatch;
